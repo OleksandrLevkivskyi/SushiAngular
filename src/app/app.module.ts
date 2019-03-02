@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 
 import { AgmCoreModule } from '@agm/core';
@@ -14,6 +15,7 @@ import { GoogleMapComponent } from './google-map/google-map.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    ProductCardComponent,
     ProductsListComponent,
     GoogleMapComponent
   ],
