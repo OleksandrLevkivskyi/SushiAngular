@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoogleMapComponent implements OnInit {
 
-  title: string = 'ENOT - Sushi';
+  // google maps zoom level
+  zoom: number = 15;
+
+  // initial center position for the map
   lat: number = 50.589432;
   lng: number = 27.614063;
 

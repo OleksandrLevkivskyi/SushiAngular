@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudService } from '../shared/crud.service';
+import { User } from '../shared/user';
 
 @Component({
   selector: 'app-products-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
-  constructor() { }
+  testUser: User = {
+    name: 'andrii',
+    email: 'roobot@i.ua',
+    contact: 100
+  };
+
+  constructor(private crudService: CrudService) { }
 
   ngOnInit() {
+    console.log('add User');
+    // this.crudService.AddUser(this.testUser);
   }
 
 }
