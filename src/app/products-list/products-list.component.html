@@ -1,6 +1,7 @@
 
 <section class="main-conteiner">
   <div class="product-list-box">
-    <app-product-card></app-product-card>
+    <app-product-card [sushiList]='$sushiList | async'></app-product-card>
   </div>
+  <!-- <button type="button" (click)="addSushi()">Add Sushi</button> -->
 </section>
