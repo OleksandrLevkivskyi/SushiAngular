@@ -15,10 +15,9 @@ import { GoogleMapComponent } from './google-map/google-map.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { CrudService } from './shared/crud.service';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { FirestoreService } from './shared/services/firestore.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     AngularFireDatabaseModule,
     AngularFireStorageModule, // Only required for storage features
   ],
-  providers: [CrudService],
+  providers: [FirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

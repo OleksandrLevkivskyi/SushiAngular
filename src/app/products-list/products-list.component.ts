@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from '../shared/crud.service';
-import { User } from '../shared/user';
+import { FirestoreService } from '../shared/services/firestore.service';
+import { Sushi } from '../shared/sushi';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products-list',
@@ -9,17 +10,26 @@ import { User } from '../shared/user';
 })
 export class ProductsListComponent implements OnInit {
 
-  testUser: User = {
-    name: 'andrii',
-    email: 'roobot@i.ua',
-    contact: 100
+  $sushiList: Observable<Sushi[]>;
+
+  sushi: Sushi = {
+    description: '',
+    name: '',
+    img: '',
+    portion: 0,
+    sauce: 0,
+    count: 0,
+    popularity: 0
   };
 
-  constructor(private crudService: CrudService) { }
+  constructor(private fsService: FirestoreService) { }
 
   ngOnInit() {
-    console.log('add User');
-    // this.crudService.AddUser(this.testUser);
+    this.$sushiList = this.fsService.getSushiList();
   }
 
+  addSushi() {
+    this.fsService.addSushi(this.sushi);
+    console.log('sushi add');
+  }
 }

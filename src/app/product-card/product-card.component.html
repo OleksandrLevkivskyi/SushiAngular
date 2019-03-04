@@ -1,14 +1,17 @@
-<div class="box">
-<div class="product_сard">
-  <img src="../../assets/img/products/image1.png" alt="Суши">
+
+<div class="product_сard" *ngFor="let sushi of sushiList">
+  <img [src]="sushi.img" [alt]="sushi.name">
   <div class="product_properties">
-    <P class="name">Золотой дракон</P>
-    <P class="weight">250\50</P>
-    <P class="composition">РИС+ЛОСОСЬ, УГОРЬ, ИКРА МАСАГО, СОУС УНАГИ, КУНЖУТ, ИМБИРЬ, ВАСАБИ, СОЕВЫЙ СОУС</P>
+    <p class="name">{{sushi.name}}</p>
+    <p class="weight">
+      <span *ngIf="sushi.portion">{{sushi.portion}}</span>
+      <span *ngIf="sushi.sauce">/{{sushi.sauce}}</span>
+      <span *ngIf="sushi.count"> ({{sushi.count}} шт.)</span>
+    </p>
+    <p class="composition">{{sushi.description}}</p>
   </div>
   <div class="price">
     <p>165 грн</p>
   </div>
 
-</div>
 </div>
