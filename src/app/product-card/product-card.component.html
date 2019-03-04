@@ -1,17 +1,21 @@
 
 <div class="product_сard" *ngFor="let sushi of sushiList">
-  <img [src]="sushi.img" [alt]="sushi.name">
+  <div class="sushi.img">
+      <img [src]="sushi.img" [alt]="sushi.name">
+  </div>
   <div class="product_properties">
     <p class="name">{{sushi.name}}</p>
-    <p class="weight">
-      <span *ngIf="sushi.portion">{{sushi.portion}}</span>
-      <span *ngIf="sushi.sauce">/{{sushi.sauce}}</span>
-      <span *ngIf="sushi.count"> ({{sushi.count}} шт.)</span>
-    </p>
     <p class="composition">{{sushi.description}}</p>
+    <div class="info"> 
+      <div class="weight">
+        <span *ngIf="sushi.portion">{{sushi.portion}}</span>
+        <span *ngIf="sushi.sauce">/{{sushi.sauce}}</span>
+        <span> грамм</span>
+        <span *ngIf="sushi.count"> ({{sushi.count}} шт.)</span>
+      </div>
+      <div class="price">
+        <span *ngIf="sushi.price">{{sushi.price}} грн</span>
+      </div>
+    </div>
   </div>
-  <div class="price">
-    <p>165 грн</p>
-  </div>
-
 </div>
