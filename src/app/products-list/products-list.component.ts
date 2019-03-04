@@ -16,6 +16,7 @@ export class ProductsListComponent implements OnInit {
     description: '',
     name: '',
     img: '',
+    price: 0,
     portion: 0,
     sauce: 0,
     count: 0,
