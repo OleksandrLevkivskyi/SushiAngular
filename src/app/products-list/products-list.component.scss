@@ -1,6 +1,6 @@
-
 .main-conteiner{
-    width: 100%;
+    padding: 0 24px;
+    width: calc(100% - 48px);
     background-color: aliceblue;
     height: 100%;
 }
@@ -15,4 +15,11 @@ app-product-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+@media screen and (max-width:1250px){
+    .main-conteiner {
+            padding: 0 24px;
+            width: calc(100% - 48px);
+        }
 }
